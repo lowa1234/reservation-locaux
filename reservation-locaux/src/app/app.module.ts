@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
+import { EtudiantService } from './etudiant.service';
+import { LocalService } from './local.service';
+import { ReservationService } from './reservation.service';
+
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListeReservationComponent } from './liste-reservation/liste-reservation.component';
@@ -13,6 +18,8 @@ import { ListeEtudiantComponent } from './liste-etudiant/liste-etudiant.componen
 import { LocalComponent } from './local/local.component';
 import { ListeLocalComponent } from './liste-local/liste-local.component';
 import { AjoutLocalComponent } from './ajout-local/ajout-local.component';
+
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -30,9 +37,11 @@ import { AjoutLocalComponent } from './ajout-local/ajout-local.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatTableModule
   ],
-  providers: [],
+  providers: [EtudiantService, LocalService, ReservationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,9 +2,9 @@ export interface Etudiant {
     nom: string;
     prenom: string;
     da: string;
-    amis: {
+    amis?: {
         nom: string;
         prenom: string;
         da: string;
-    };
+    }[];
 }
