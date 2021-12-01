@@ -7,13 +7,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListeReservationComponent } from './liste-reservation/liste-reservation.component';
 import { ReservationComponent } from './reservation/reservation.component';
 import { AjoutReservationComponent } from './ajout-reservation/ajout-reservation.component';
+import { AjoutEtudiantComponent } from './ajout-etudiant/ajout-etudiant.component';
+import { EtudiantComponent } from './etudiant/etudiant.component';
+import { ListeEtudiantComponent } from './liste-etudiant/liste-etudiant.component';
+import { LocalComponent } from './local/local.component';
+import { ListeLocalComponent } from './liste-local/liste-local.component';
+import { AjoutLocalComponent } from './ajout-local/ajout-local.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListeReservationComponent,
     ReservationComponent,
-    AjoutReservationComponent
+    AjoutReservationComponent,
+    AjoutEtudiantComponent,
+    EtudiantComponent,
+    ListeEtudiantComponent,
+    LocalComponent,
+    ListeLocalComponent,
+    AjoutLocalComponent
   ],
   imports: [
     BrowserModule,
