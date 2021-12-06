@@ -1,1 +1,30 @@
-<p>liste-local works!</p>
+<table mat-table [dataSource]="locaux" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef> Nom </th>
+      <td mat-cell *matCellDef="let local"> {{local.nom}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="nbmax">
+      <th mat-header-cell *matHeaderCellDef> Nb Max </th>
+      <td mat-cell *matCellDef="let local"> {{local.nbreservation}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="nbreservation">
+      <th mat-header-cell *matHeaderCellDef> Nb Réservations </th>
+      <td mat-cell *matCellDef="let local"> {{local.nbmax}} </td>
+    </ng-container>
+    
+    <!--<ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Supprimer </th>
+      <td mat-cell>
+        <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>-->
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

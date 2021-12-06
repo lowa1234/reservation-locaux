@@ -1,1 +1,35 @@
-<p>liste-reservation works!</p>
+<table mat-table [dataSource]="reservations" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="nom_local">
+      <th mat-header-cell *matHeaderCellDef> Nom local </th>
+      <td mat-cell *matCellDef="let reservation"> {{reservation.nom_local}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="da_etudiant">
+      <th mat-header-cell *matHeaderCellDef> DA étudiant </th>
+      <td mat-cell *matCellDef="let reservation"> {{reservation.da_etudiant}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="heure_debut">
+      <th mat-header-cell *matHeaderCellDef> Heure début </th>
+      <td mat-cell *matCellDef="let reservation"> {{reservation.heure_debut}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="heure_fin">
+      <th mat-header-cell *matHeaderCellDef> Heure fin </th>
+      <td mat-cell *matCellDef="let reservation"> {{reservation.heure_fin}} </td>
+    </ng-container>
+    
+    <!--<ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Supprimer </th>
+      <td mat-cell>
+        <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>-->
+    
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

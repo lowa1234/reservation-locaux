@@ -10,10 +10,6 @@ import { EtudiantService } from '../etudiant.service';
 export class ListeEtudiantComponent implements OnInit {
   etudiants: Etudiant[] = [];
   displayedColumns: string[] = ['nom', 'prenom', 'da'];
-  dataSource = this.etudiants;
-  nom = "test";
-  prenom = "test2";
-  da = "1234"
 
   constructor(private etudiantService: EtudiantService) { }
 

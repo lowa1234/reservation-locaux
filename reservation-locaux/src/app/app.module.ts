@@ -20,6 +20,14 @@ import { ListeLocalComponent } from './liste-local/liste-local.component';
 import { AjoutLocalComponent } from './ajout-local/ajout-local.component';
 
 import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +47,14 @@ import {MatTableModule} from '@angular/material/table';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonModule, 
+    MatIconModule, 
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule, 
+    MatDatepickerModule,
+    MatFormFieldModule
   ],
   providers: [EtudiantService, LocalService, ReservationService],
   bootstrap: [AppComponent]
