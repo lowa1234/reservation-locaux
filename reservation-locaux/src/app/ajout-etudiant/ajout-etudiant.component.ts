@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Etudiant } from '../etudiant';
+import { EtudiantComponent } from '../etudiant/etudiant.component';
 
 @Component({
   selector: 'app-ajout-etudiant',
@@ -6,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ajout-etudiant.component.css']
 })
 export class AjoutEtudiantComponent implements OnInit {
+
+  model: Etudiant = {nom: '', prenom: '', da: ''};
+
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
 
   constructor() { }
 

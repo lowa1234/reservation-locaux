@@ -9,7 +9,7 @@ import { EtudiantService } from '../etudiant.service';
 })
 export class ListeEtudiantComponent implements OnInit {
   etudiants: Etudiant[] = [];
-  displayedColumns: string[] = ['nom', 'prenom', 'da'];
+  displayedColumns: string[] = ['nom', 'prenom', 'da', 'delete'];
 
   constructor(private etudiantService: EtudiantService) { }
 
@@ -19,5 +19,11 @@ export class ListeEtudiantComponent implements OnInit {
 
   getEtudiants(): void{
     this.etudiantService.getEtudiants().subscribe(resultat => this.etudiants = resultat);
+  }
+
+  onDelete(etudiant: Etudiant): void{
+    if(etudiant.da){
+      this.etudiantService.deleteEtudiant(etudiant.da).subscribe(result => this.etudiants = this.etudiants.filter(e => e !==etudiant));
+    }
   }
 }

@@ -9,7 +9,7 @@ import { ReservationService } from '../reservation.service';
 })
 export class ListeReservationComponent implements OnInit {
   reservations: Reservation[] = [];
-  displayedColumns: string[] = ['nom_local', 'da_etudiant', 'heure_debut', 'heure_fin'];
+  displayedColumns: string[] = ['nom_local', 'da_etudiant', 'heure_debut', 'heure_fin', 'delete'];
 
   constructor(private reservationService: ReservationService) { }
 
@@ -19,5 +19,11 @@ export class ListeReservationComponent implements OnInit {
 
   getReservations(): void{
     this.reservationService.getLocaux().subscribe(resultat => this.reservations = resultat);
+  }
+
+  onDelete(reservation: Reservation): void{
+    if(reservation._id){
+      this.reservationService.deleteReservation(reservation._id).subscribe(result => this.reservations = this.reservations.filter(r => r !== reservation));
+    }
   }
 }

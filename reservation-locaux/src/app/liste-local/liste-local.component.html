@@ -15,14 +15,14 @@
       <td mat-cell *matCellDef="let local"> {{local.nbmax}} </td>
     </ng-container>
     
-    <!--<ng-container matColumnDef="delete">
+    <ng-container matColumnDef="delete">
       <th mat-header-cell *matHeaderCellDef> Supprimer </th>
-      <td mat-cell>
-        <button mat-fab color="warn" aria-label="Example icon button with a delete icon">
-          <mat-icon>delete</mat-icon>
-        </button>
+      <td mat-cell *matCellDef="let local">
+        <form (ngSubmit)="onDelete(local)">
+          <button mat-button><i class="material-icons">delete</i></button>
+        </form>
       </td>
-    </ng-container>-->
+    </ng-container>
     
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

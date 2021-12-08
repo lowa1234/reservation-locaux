@@ -1,1 +1,19 @@
-<p>ajout-local works!</p>
+<h1>Ajout d'un local</h1>
+<form (ngSubmit)="onSubmit()" #localForm="ngForm">
+    <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nom</mat-label>
+            <input matInput required [(ngModel)]="model.nom" placeholder="Nom du local">
+        </mat-form-field>
+    </div>
+    
+    <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nombre max</mat-label>
+            <input matInput required [(ngModel)]="model.nbmax" placeholder="Nombre maximum de réservation du local">
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button type="submit" class="btn btn-success" [disabled]="!localForm.form.valid">Submit</button>
+    <p>{{submitted}}</p>
+</form>

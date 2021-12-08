@@ -1,1 +1,19 @@
-<p>ajout-reservation works!</p>
+<h1>Ajout d'une réservation</h1>
+<form (ngSubmit)="onSubmit()" #reservationForm="ngForm">
+    <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nom du local</mat-label>
+            <input matInput required [(ngModel)]="model.nom_local" placeholder="Nom du local">
+        </mat-form-field>
+    </div>
+    
+    <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>DA de l'étudiant</mat-label>
+            <input matInput required [(ngModel)]="model.da_etudiant" placeholder="DA de l'étudiant">
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button type="submit" class="btn btn-success" [disabled]="!reservationForm.form.valid">Submit</button>
+    <p>{{submitted}}</p>
+</form>

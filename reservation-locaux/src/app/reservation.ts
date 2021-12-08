@@ -1,6 +1,7 @@
 export interface Reservation {
+    _id?: string;
     da_etudiant: string;
     nom_local: string;
-    heure_debut: Date;
-    heure_fin: Date;
+    heure_debut: string;
+    heure_fin: string;
 }

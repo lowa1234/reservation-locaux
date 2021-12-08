@@ -9,7 +9,7 @@ import { LocalService } from '../local.service';
 })
 export class ListeLocalComponent implements OnInit {
   locaux: Local[] = [];
-  displayedColumns: string[] = ['nom', 'nbmax', 'nbreservation'];
+  displayedColumns: string[] = ['nom', 'nbmax', 'nbreservation', 'delete'];
 
   constructor(private localService: LocalService) { }
 
@@ -19,5 +19,11 @@ export class ListeLocalComponent implements OnInit {
 
   getLocaux(): void{
     this.localService.getLocaux().subscribe(resultat => this.locaux = resultat);
+  }
+
+  onDelete(local: Local): void{
+    if(local.nom){
+      this.localService.deleteLocal(local.nom).subscribe(result => this.locaux = this.locaux.filter(l => l !== local));
+    }
   }
 }

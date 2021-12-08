@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { EtudiantService } from './etudiant.service';
 import { LocalService } from './local.service';
@@ -27,6 +28,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -47,6 +50,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
     MatTableModule,
     MatButtonModule, 
     MatIconModule, 
@@ -54,7 +58,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatListModule,
     MatToolbarModule, 
     MatDatepickerModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule, 
+    MatMenuModule
   ],
   providers: [EtudiantService, LocalService, ReservationService],
   bootstrap: [AppComponent]

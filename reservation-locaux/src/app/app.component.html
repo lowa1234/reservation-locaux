@@ -1,7 +1,19 @@
 <mat-toolbar>
-    <button mat-button><a routerLink="/etudiants">Étudiants</a></button>
-    <button mat-button><a routerLink="/reservations">Réservations</a></button>
-    <button mat-button><a routerLink="/locaux">Locaux</a></button>
+    <button mat-button [matMenuTriggerFor]="menu">Étudiants</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item><a routerLink="/etudiants">Liste</a></button>
+        <button mat-menu-item><a routerLink="/ajout-etudiants">Ajout</a></button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="menu2">Réservations</button>
+    <mat-menu #menu2="matMenu">
+        <button mat-menu-item><a routerLink="/reservations">Liste</a></button>
+        <button mat-menu-item><a routerLink="/ajout-reservations">Ajout</a></button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="menu3">Locaux</button>
+    <mat-menu #menu3="matMenu">
+        <button mat-menu-item><a routerLink="/locaux">Liste</a></button>
+        <button mat-menu-item><a routerLink="/ajout-locaux">Ajout</a></button>
+    </mat-menu>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
