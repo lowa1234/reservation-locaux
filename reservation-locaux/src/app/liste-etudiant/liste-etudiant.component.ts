@@ -9,7 +9,7 @@ import { EtudiantService } from '../etudiant.service';
 })
 export class ListeEtudiantComponent implements OnInit {
   etudiants: Etudiant[] = [];
-  displayedColumns: string[] = ['nom', 'prenom', 'da', 'delete'];
+  displayedColumns: string[] = ['nom', 'prenom', 'da', 'delete', 'edit'];
 
   constructor(private etudiantService: EtudiantService) { }
 

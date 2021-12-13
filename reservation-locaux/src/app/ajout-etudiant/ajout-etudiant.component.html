@@ -1,28 +1,27 @@
 <h1>Ajout d'un étudiant</h1>
-<form (ngSubmit)="onSubmit()" #etudiantForm="ngForm">
+<form (ngSubmit)="onAdd(etudiantForm)" #etudiantForm="ngForm">
     <div class="form-group">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Nom</mat-label>
-            <input matInput required [(ngModel)]="model.nom" placeholder="Votre nom de famille">
+            <input matInput #nom="ngModel" required [(ngModel)]="model.nom" name="nom" placeholder="Votre nom de famille">
         </mat-form-field>
     </div>
     
     <div class="form-group">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Prénom</mat-label>
-            <input matInput required [(ngModel)]="model.prenom" placeholder="Votre prénom">
+            <input matInput #prenom="ngModel" required [(ngModel)]="model.prenom" name="prenom" placeholder="Votre prénom">
         </mat-form-field>
     </div>
 
     <div class="form-group">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>DA</mat-label>
-            <input matInput required [(ngModel)]="model.da" placeholder="Votre numéro de demande d'admission">
+            <input matInput #da="ngModel" required [(ngModel)]="model.da" name="da" placeholder="Votre numéro de demande d'admission">
         </mat-form-field>
     </div>
 
     <button mat-raised-button type="submit" class="btn btn-success" [disabled]="!etudiantForm.form.valid">Submit</button>
-    <p>{{submitted}}</p>
 </form>
   
   

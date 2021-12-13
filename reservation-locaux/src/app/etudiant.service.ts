@@ -22,4 +22,8 @@ export class EtudiantService {
   deleteEtudiant(da: string): Observable<Etudiant>{
     return this.http.delete<Etudiant>(this.url + 'etudiants/' + da, httpOptions);
   }
+
+  addEtudiant(etudiant: Etudiant): Observable<Etudiant>{
+    return this.http.post<Etudiant>(this.url + 'etudiants', etudiant, httpOptions);
+  }
 }

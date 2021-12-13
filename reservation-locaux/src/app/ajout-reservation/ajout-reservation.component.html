@@ -2,18 +2,57 @@
 <form (ngSubmit)="onSubmit()" #reservationForm="ngForm">
     <div class="form-group">
         <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Nom du local</mat-label>
-            <input matInput required [(ngModel)]="model.nom_local" placeholder="Nom du local">
-        </mat-form-field>
+            <mat-label>DA de l'étudiant</mat-label>
+            <mat-select required>
+              <mat-option *ngFor="let etudiant of etudiants" [value]="etudiant.da">
+                  {{etudiant.da}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
     </div>
     
     <div class="form-group">
         <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>DA de l'étudiant</mat-label>
-            <input matInput required [(ngModel)]="model.da_etudiant" placeholder="DA de l'étudiant">
+            <mat-label>Nom du local</mat-label>
+            <mat-select required>
+              <mat-option *ngFor="let local of locaux" [value]="local.nom">
+                  {{local.nom}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+
+    <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Date de la réservation</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
     </div>
 
+    <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Heure de début</mat-label>
+            <mat-select required>
+              <mat-option *ngFor="let heure of select_heure_debut" [value]="heure">
+                    {{heure}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    
+    <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Heure de fin</mat-label>
+            <mat-select required>
+              <mat-option *ngFor="let heure of select_heure_fin" [value]="heure">
+                    {{heure}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+
     <button mat-raised-button type="submit" class="btn btn-success" [disabled]="!reservationForm.form.valid">Submit</button>
-    <p>{{submitted}}</p>
 </form>
+<!-- *ngFor="let food of foods" [value]="food.value"-->

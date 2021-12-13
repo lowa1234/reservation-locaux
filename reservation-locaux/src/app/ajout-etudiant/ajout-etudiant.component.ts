@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { MatTable } from '@angular/material/table';
 import { Etudiant } from '../etudiant';
-import { EtudiantComponent } from '../etudiant/etudiant.component';
+import { EtudiantService } from '../etudiant.service';
 
 @Component({
   selector: 'app-ajout-etudiant',
@@ -11,13 +13,14 @@ export class AjoutEtudiantComponent implements OnInit {
 
   model: Etudiant = {nom: '', prenom: '', da: ''};
 
-  submitted = false;
-
-  onSubmit() { this.submitted = true; }
-
-  constructor() { }
+  constructor(private etudiantService: EtudiantService) { }
 
   ngOnInit(): void {
   }
 
+  onAdd(etudiantForm: NgForm){
+    if(etudiantForm.valid){
+      this.etudiantService.addEtudiant(this.model).subscribe();
+    }
+  }
 }
