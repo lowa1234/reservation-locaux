@@ -1,3 +1,4 @@
+<h1>Liste des réservations</h1>
 <table mat-table [dataSource]="reservations" class="mat-elevation-z8">
   
     <ng-container matColumnDef="nom_local">
@@ -29,7 +30,40 @@
       </td>
     </ng-container>
     
-
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<h1>Nombre de résevation par étudiant</h1>
+<table mat-table [dataSource]="nbParEtudiant" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="da_etudiant">
+      <th mat-header-cell *matHeaderCellDef> DA étudiant </th>
+      <td mat-cell *matCellDef="let reservations"> {{reservations._id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="nb">
+      <th mat-header-cell *matHeaderCellDef> Nombre de réservations </th>
+      <td mat-cell *matCellDef="let reservations"> {{reservations.nb}} </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsEtudiant"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsEtudiant;"></tr>
+</table>
+
+<h1>Nombre de résevation par local</h1>
+<table mat-table [dataSource]="nbParLocal" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="nom_local">
+      <th mat-header-cell *matHeaderCellDef> Nom local </th>
+      <td mat-cell *matCellDef="let reservations"> {{reservations._id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="nb">
+      <th mat-header-cell *matHeaderCellDef> Nombre de réservations </th>
+      <td mat-cell *matCellDef="let reservations"> {{reservations.nb}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsLocal"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsLocal;"></tr>
 </table>
