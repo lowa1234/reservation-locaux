@@ -26,4 +26,9 @@ export class EtudiantService {
   addEtudiant(etudiant: Etudiant): Observable<Etudiant>{
     return this.http.post<Etudiant>(this.url + 'etudiants', etudiant, httpOptions);
   }
+
+  updateEtudiant(etudiant: Etudiant): Observable<any>{
+    const da = etudiant.da;
+    return this.http.put<Etudiant>(this.url + 'etudiants/' + da, etudiant, httpOptions);
+  }
 }

@@ -22,4 +22,8 @@ export class LocalService {
   deleteLocal(nom: string): Observable<Local>{
     return this.http.delete<Local>(this.url + 'locaux/' + nom, httpOptions);
   }
+
+  addLocal(local: Local): Observable<Local>{
+    return this.http.post<Local>(this.url + 'locaux', local, httpOptions);
+  }
 }
