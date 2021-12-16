@@ -19,6 +19,10 @@ export class EtudiantService {
     return this.http.get<Etudiant[]>(this.url + 'etudiants');
   }
 
+  getEtudiant(da: string): Observable<Etudiant>{
+    return this.http.get<Etudiant>(this.url + 'etudiants/' + da);
+  }
+
   deleteEtudiant(da: string): Observable<Etudiant>{
     return this.http.delete<Etudiant>(this.url + 'etudiants/' + da, httpOptions);
   }

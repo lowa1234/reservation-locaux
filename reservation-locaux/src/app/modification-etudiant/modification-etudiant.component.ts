@@ -11,6 +11,8 @@ import { EtudiantService } from '../etudiant.service';
 export class ModificationEtudiantComponent implements OnInit {
   etudiants: Etudiant[] = [];
 
+  etudiant: Etudiant = {nom: '', prenom: '', da: ''};
+
   model: Etudiant = {nom: '', prenom: '', da: ''};
 
   constructor(private etudiantService: EtudiantService) { }
@@ -23,7 +25,13 @@ export class ModificationEtudiantComponent implements OnInit {
     this.etudiantService.getEtudiants().subscribe(resultat => this.etudiants = resultat);
   }
 
-  onEdit(etudiantForm: NgForm):void{
+  getEtudiant():void{
+    this.etudiantService.getEtudiant(this.model.da).subscribe(resultat => this.etudiant = resultat);
+  }
 
+  onEdit(etudiantForm: NgForm):void{
+    if(etudiantForm.valid){
+      this.etudiantService.updateEtudiant(this.model).subscribe();
+    }
   }
 }

@@ -9,7 +9,7 @@ import { LocalService } from '../local.service';
 })
 export class ListeLocalComponent implements OnInit {
   locaux: Local[] = [];
-  displayedColumns: string[] = ['nom', 'nbmax', 'nbreservation', 'delete'];
+  displayedColumns: string[] = ['nom', 'nbmax', 'nbreservation', 'dispo', 'delete'];
 
   constructor(private localService: LocalService) { }
 

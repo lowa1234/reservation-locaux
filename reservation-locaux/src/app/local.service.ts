@@ -19,11 +19,20 @@ export class LocalService {
     return this.http.get<Local[]>(this.url + 'locaux');
   }
 
+  getLocal(nom: string): Observable<Local>{
+    return this.http.get<Local>(this.url + 'locaux/' + nom);
+  }
+
   deleteLocal(nom: string): Observable<Local>{
     return this.http.delete<Local>(this.url + 'locaux/' + nom, httpOptions);
   }
 
   addLocal(local: Local): Observable<Local>{
     return this.http.post<Local>(this.url + 'locaux', local, httpOptions);
+  }
+
+  updateLocal(local: Local): Observable<any>{
+    const nom = local.nom;
+    return this.http.put<Local>(this.url + 'locaux/' + nom, local, httpOptions);
   }
 }

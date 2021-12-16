@@ -3,7 +3,7 @@
     <div class="form-group">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Nom du local</mat-label>
-            <mat-select required>
+            <mat-select required [(ngModel)]="model.nom" name="nom" (selectionChange)="getLocal()">
               <mat-option *ngFor="let local of locaux" [value]="local.nom">
                   {{local.nom}}
               </mat-option>
@@ -14,14 +14,14 @@
     <div class="form-group">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Nombre max</mat-label>
-            <input matInput #nbmax="ngModel" required [(ngModel)]="model.nbmax" name="nbmax" placeholder="Nombre maximum de réservation du local">
+            <input matInput [value]="local.nbmax" #nbmax="ngModel" required [(ngModel)]="model.nbmax" name="nbmax" placeholder="Nombre maximum de réservation du local">
         </mat-form-field>
     </div>
     
     <div class="form-group">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Disponible</mat-label>
-            <mat-select required>
+            <mat-select required [(value)]="local.dispo">
                 <mat-option [value]="true">Oui</mat-option>
                 <mat-option [value]="false">Non</mat-option>
             </mat-select>
