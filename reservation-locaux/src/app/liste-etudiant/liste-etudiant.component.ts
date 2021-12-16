@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Etudiant } from '../etudiant';
 import { EtudiantService } from '../etudiant.service';
 
@@ -26,9 +25,5 @@ export class ListeEtudiantComponent implements OnInit {
     if(etudiant.da){
       this.etudiantService.deleteEtudiant(etudiant.da).subscribe(result => this.etudiants = this.etudiants.filter(e => e !==etudiant));
     }
-  }
-
-  onEdit(da: string):void{
-
   }
 }

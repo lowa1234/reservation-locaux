@@ -32,6 +32,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { ModificationEtudiantComponent } from './modification-etudiant/modification-etudiant.component';
+import { ModificationLocalComponent } from './modification-local/modification-local.component';
+import { ModificationReservationComponent } from './modification-reservation/modification-reservation.component';
 
 
 @NgModule({
@@ -45,7 +48,10 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     ListeEtudiantComponent,
     LocalComponent,
     ListeLocalComponent,
-    AjoutLocalComponent
+    AjoutLocalComponent,
+    ModificationEtudiantComponent,
+    ModificationLocalComponent,
+    ModificationReservationComponent
   ],
   imports: [
     BrowserModule,

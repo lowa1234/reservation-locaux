@@ -1,0 +1,29 @@
+<h1>Modification d'un étudiant</h1>
+<form (ngSubmit)="onEdit(etudiantForm)" #etudiantForm="ngForm">
+    <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>DA de l'étudiant</mat-label>
+            <mat-select required>
+              <mat-option *ngFor="let etudiant of etudiants" [value]="etudiant.da">
+                  {{etudiant.da}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+
+    <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Nom</mat-label>
+            <input matInput #nom="ngModel" required [(ngModel)]="model.nom" name="nom" placeholder="Votre nom de famille">
+        </mat-form-field>
+    </div>
+    
+    <div class="form-group">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Prénom</mat-label>
+            <input matInput #prenom="ngModel" required [(ngModel)]="model.prenom" name="prenom" placeholder="Votre prénom">
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button type="submit" class="btn btn-success" [disabled]="!etudiantForm.form.valid">Submit</button>
+</form>
