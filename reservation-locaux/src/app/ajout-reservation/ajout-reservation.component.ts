@@ -16,11 +16,11 @@ export class AjoutReservationComponent implements OnInit {
   select_heure_debut: String[] = ['12:00:00', '13:00:00', '14:00:00', '15:00:00'];
   select_heure_fin: String[] = ['13:00:00', '14:00:00', '15:00:00', '16:00:00'];
 
-  model: Reservation = {nom_local: '', da_etudiant: '', heure_debut: '', heure_fin:''};
+  model: Reservation = {nom_local: '', da_etudiant: '', date: '', heure_debut: '', heure_fin:''};
 
   submitted = false;
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() { }
 
   constructor(private etudiantService: EtudiantService, private localService: LocalService) { }
 
