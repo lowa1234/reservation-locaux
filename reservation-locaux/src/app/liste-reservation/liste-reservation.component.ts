@@ -11,7 +11,7 @@ import { NbReservationLocal } from '../nb-reservation-local';
 })
 export class ListeReservationComponent implements OnInit {
   reservations: Reservation[] = [];
-  displayedColumns: string[] = ['nom_local', 'da_etudiant', 'heure_debut', 'heure_fin', 'delete'];
+  displayedColumns: string[] = ['nom_local', 'da_etudiant', 'date', 'heure_debut', 'heure_fin', 'delete'];
   
   nbParEtudiant: NbReservationEtudiant[] = [];
   displayedColumnsEtudiant: string[] = ['da_etudiant', 'nb'];

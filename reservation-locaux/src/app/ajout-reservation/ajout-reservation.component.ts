@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Reservation } from '../reservation';
+import { ReservationService } from '../reservation.service';
 import { Etudiant } from '../etudiant';
 import { EtudiantService } from '../etudiant.service';
 import { Local } from '../local';
@@ -18,11 +20,7 @@ export class AjoutReservationComponent implements OnInit {
 
   model: Reservation = {nom_local: '', da_etudiant: '', date: '', heure_debut: '', heure_fin:''};
 
-  submitted = false;
-
-  onSubmit() { }
-
-  constructor(private etudiantService: EtudiantService, private localService: LocalService) { }
+  constructor(private reservationService: ReservationService, private etudiantService: EtudiantService, private localService: LocalService) { }
 
   ngOnInit(): void {
     this.getEtudiants();
@@ -37,4 +35,9 @@ export class AjoutReservationComponent implements OnInit {
     this.localService.getLocaux().subscribe(result => this.locaux = result);
   }
 
+  onAdd(reservationForm: NgForm){
+    if(reservationForm.valid){
+      this.reservationService.addReservation(this.model).subscribe();
+    }
+  }
 }

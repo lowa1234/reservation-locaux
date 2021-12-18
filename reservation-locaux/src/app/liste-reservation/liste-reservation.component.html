@@ -10,6 +10,11 @@
       <th mat-header-cell *matHeaderCellDef> DA étudiant </th>
       <td mat-cell *matCellDef="let reservation"> {{reservation.da_etudiant}} </td>
     </ng-container>
+    
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let reservation"> {{reservation.date}} </td>
+    </ng-container>
   
     <ng-container matColumnDef="heure_debut">
       <th mat-header-cell *matHeaderCellDef> Heure début </th>

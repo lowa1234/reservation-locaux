@@ -32,5 +32,9 @@ export class ReservationService {
   getNbParLocal(): Observable<NbReservationLocal[]>{
     return this.http.get<NbReservationLocal[]>(this.url + 'reservations/nb-par-local')
   }
+
+  addReservation(reservation: Reservation): Observable<Reservation>{
+    return this.http.post<Reservation>(this.url + 'reservations', reservation, httpOptions);
+  }
 }
 

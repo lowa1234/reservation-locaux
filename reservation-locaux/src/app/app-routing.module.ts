@@ -16,7 +16,6 @@ const routes: Routes = [
   { path: 'modification-etudiants', component: ModificationEtudiantComponent },
   { path: 'reservations', component: ListeReservationComponent },
   { path: 'ajout-reservations', component: AjoutReservationComponent },
-  { path: 'modification-reservations', component: ModificationReservationComponent },
   { path: 'locaux', component: ListeLocalComponent },
   { path: 'ajout-locaux', component: AjoutLocalComponent },
   { path: 'modification-locaux', component: ModificationLocalComponent }

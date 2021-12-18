@@ -1,9 +1,9 @@
 <h1>Ajout d'une réservation</h1>
-<form (ngSubmit)="onSubmit()" #reservationForm="ngForm">
+<form (ngSubmit)="onAdd(reservationForm)" #reservationForm="ngForm">
     <div class="form-group">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>DA de l'étudiant</mat-label>
-            <mat-select required>
+            <mat-select #da_etudiant="ngModel" required [(ngModel)]="model.da_etudiant" name="da_etudiant">
               <mat-option *ngFor="let etudiant of etudiants" [value]="etudiant.da">
                   {{etudiant.da}}
               </mat-option>
@@ -14,7 +14,7 @@
     <div class="form-group">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Nom du local</mat-label>
-            <mat-select required>
+            <mat-select #nom_local="ngModel" required [(ngModel)]="model.nom_local" name="nom_local">
               <mat-option *ngFor="let local of locaux" [value]="local.nom">
                   {{local.nom}}
               </mat-option>
@@ -25,7 +25,7 @@
     <div class="form-group">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Date de la réservation</mat-label>
-            <input matInput [matDatepicker]="picker">
+            <input matInput [matDatepicker]="picker" #date="ngModel" required [(ngModel)]="model.date" name="date">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
@@ -34,7 +34,7 @@
     <div class="form-group">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Heure de début</mat-label>
-            <mat-select required>
+            <mat-select #heure_debut="ngModel" required [(ngModel)]="model.heure_debut" name="heure_debut">
               <mat-option *ngFor="let heure of select_heure_debut" [value]="heure">
                     {{heure}}
               </mat-option>
@@ -45,7 +45,7 @@
     <div class="form-group">
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Heure de fin</mat-label>
-            <mat-select required>
+            <mat-select #heure_fin="ngModel" required [(ngModel)]="model.heure_fin" name="heure_fin">
               <mat-option *ngFor="let heure of select_heure_fin" [value]="heure">
                     {{heure}}
               </mat-option>
